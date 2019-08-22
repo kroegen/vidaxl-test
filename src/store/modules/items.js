@@ -5,11 +5,13 @@ import { merge }    from '@/utils/baseUtils';
 // initial state
 const state = {
     items       : [],
+    currentItem : null,
 };
 
 // getters
 const getters = {
     items       : state => state.items,
+    currentItem : state => state.currentItem,
 };
 
 // actions
@@ -34,19 +36,19 @@ const actions = {
         }
     },
 
-    async updateTask({}, { payload, id }) { // eslint-disable-line
+    async updateItem({ commit }, { payload, id }) { // eslint-disable-line
         try {
-            await api.tasks.updateTask(`tasks/${id}`, payload);
+            await api.items.updateItem(`items/${id}`, payload);
         } catch (error) {
             await logError(error);
         }
     },
 
-    async deleteTask({ commit }, id) {
+    async deleteItem({ commit }, id) {
         try {
-            await api.tasks.deleteTask(`tasks/${id}`);
+            await api.items.deleteItem(`items/${id}`);
 
-            await commit('DELETE_TASK_SUCCESS', id);
+            await commit('DELETE_ITEM_SUCCESS', id);
         } catch (error) {
             await logError(error);
         }
@@ -59,18 +61,13 @@ const mutations = {
         state.items = merge(state.items, items);
     },
 
-    FETCH_POST_SUCCESS(state, { post }) {
-        state.currentPost = post;
+    CREATE_ITEM_SUCCESS(state, item) {
+        state.items = [item, ...state.items];
     },
 
-    FETCH_POST_COMMENTS_SUCCESS(state, { comments }) {
-        state.comments = comments;
+    DELETE_ITEM_SUCCESS(state, id) {
+        state.items = [...state.items.filter(item => item.id !== id)];
     },
-
-    CLEAR_POST_SUCCESS(state) {
-        state.comments    = [];
-        state.currentPost = null;
-    }
 };
 
 export default {

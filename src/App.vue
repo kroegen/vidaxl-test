@@ -35,10 +35,4 @@ export default {
 
 <style>
     @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons';
-
-    .app .v-btn--example {
-        bottom: 0;
-        position: absolute;
-        margin: 0 0 16px 16px;
-    }
 </style>

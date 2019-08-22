@@ -12,7 +12,7 @@ function apiFactory({ apiPrefix } = {}) {
 
     return {
         apiClient : api,
-        posts     : new ItemsAPI({ apiClient: api }),
+        items     : new ItemsAPI({ apiClient: api }),
     };
 }
 

@@ -52,7 +52,6 @@ export default class ApiClient {
         try {
             const resp = await axios(options);
 
-            if (resp.status && resp.status === 200) return resp.data;
             if (resp.data.status && resp.data.status === 1) return resp.data.data;
 
             throw resp.data.data;

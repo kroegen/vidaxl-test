@@ -1,7 +1,7 @@
-exports.dumpItem = task => {
+exports.dumpItem = item => {
     return {
-        id          : task._id,
-        name        : task.name,
-        description : task.description,
+        id          : item._id,
+        name        : item.name,
+        description : item.description,
     }
 }
