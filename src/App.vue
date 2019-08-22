@@ -1,36 +1,44 @@
 <template>
-  <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
-    </v-app-bar>
+    <v-app class="app">
+        <v-app-bar app>
+            <v-toolbar-title class="headline">
+                VidaXL Test
+            </v-toolbar-title>
+            <v-spacer></v-spacer>
+        </v-app-bar>
 
-    <v-content>
-      <HelloWorld/>
-    </v-content>
-  </v-app>
+        <v-content>
+            <v-container
+                fluid
+            >
+                <transition name="fade" mode="out-in">
+                    <router-view :key="$route.path"></router-view>
+                </transition>
+            </v-container>
+        </v-content>
+    </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
-
 export default {
-  name: 'App',
-  components: {
-    HelloWorld,
-  },
-  data: () => ({
+    name: 'App',
+    components: {
+    },
+    data: () => ({
     //
-  }),
+    }),
+    created () {
+        this.$vuetify.theme.dark = true;
+    },
 };
 </script>
+
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons';
+
+    .app .v-btn--example {
+        bottom: 0;
+        position: absolute;
+        margin: 0 0 16px 16px;
+    }
+</style>

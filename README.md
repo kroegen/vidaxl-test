@@ -5,9 +5,10 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Edit config files (server/bin/config.json and .env)
 ```
-npm run serve
+mv server/bin/config.json.sample server/bin/config.json
+mv .env.sample .env && cp .env .env.prod
 ```
 
 ### Compiles and minifies for production
@@ -15,15 +16,14 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
+### Run server
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run start
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### See http://localhost:3000
+
+## Compiles and hot-reloads for development
+```
+npm run serve (for front) + npm run start (for server) in other tab
+```
