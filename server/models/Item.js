@@ -10,7 +10,7 @@ const ItemSchema = new Schema({
     name: {
         type: String,
     },
-    content: {
+    description: {
         type: String,
     },
 });

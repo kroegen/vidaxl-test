@@ -1,10 +1,8 @@
 const express = require('express');
 const router  = express.Router();
 
-const sessions  = require('./sessions');
-const tasks     = require('./tasks');
+const items   = require('./items');
 
-router.use('/sessions', sessions);
-router.use('/tasks', tasks);
+router.use('/items', items);
 
 module.exports = router;

@@ -3,12 +3,12 @@ const utils = require('../../utils');
 
 exports.updateItem = async(req, res, next) => {
     try {
-        const { id }            = req.params;
-        const { name, content } = req.body;
-        const item              = await Item.findOne({ _id: id });
+        const { id }                = req.params;
+        const { name, description } = req.body;
+        const item                  = await Item.findOne({ _id: id });
 
         item.name = name;
-        item.content = content;
+        item.description = description;
 
         await item.save();
         await res.send({ status: 1, data: { item: utils.dump.dumpItem(item) } });
