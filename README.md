@@ -1,7 +1,8 @@
 # vidaxl-test
 
 ```
-This test is a full stack app made with vue2 + veutify and express + mongoose
+This test is a full stack CRUD app made with vue2 + veutify and express + mongoose
+A table with possibility to show/add/delete/update items stored in db on be side
 ```
 
 ## Project setup
