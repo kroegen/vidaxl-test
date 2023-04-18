@@ -1,5 +1,9 @@
 # vidaxl-test
 
+```
+This test is a full stack app made with vue2 + veutify and express + mongoose
+```
+
 ## Project setup
 ```
 npm install
