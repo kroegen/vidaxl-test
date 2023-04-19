@@ -4,6 +4,8 @@
 This test is a full stack CRUD app made with vue2 + veutify and express + mongoose
 A table with possibility to show/add/delete/update items stored in db on be side
 ```
+![Screenshot1](public/info1.png?raw=true "Screenshot1")
+![Screenshot2](public/info2.png?raw=true "Screenshot2")
 
 ## Project setup
 ```
